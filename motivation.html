@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivation - Diskriminasyon</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .content-page {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            animation: slideIn 0.8s ease-out;
+        }
+        .page-title {
+            color: #4facfe;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 15px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .activity-title {
+            color: #f093fb;
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 40px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        .content-area {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .instruction-box {
+            background: linear-gradient(135deg, #e0f7ff 0%, #e8f4ff 100%);
+            padding: 25px;
+            border-radius: 20px;
+            border-left: 5px solid #4facfe;
+            margin-bottom: 30px;
+            animation: slideInLeft 1s ease-out;
+        }
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .instruction-box p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .qr-section {
+            text-align: center;
+            margin: 40px 0;
+            animation: scaleIn 1.2s ease-out;
+        }
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .qr-container {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(79, 172, 254, 0.3);
+            display: inline-block;
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        .qr-code {
+            width: 300px;
+            height: 300px;
+            border: 5px solid #4facfe;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        .qr-code:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.4);
+        }
+        .scan-instruction {
+            margin-top: 20px;
+            font-size: 22px;
+            color: #4facfe;
+            font-weight: bold;
+            animation: blink 2s ease-in-out infinite;
+        }
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+        }
+        .scan-details {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #666;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="content-page">
+        <h1 class="page-title">💡 Motivation</h1>
+        <h2 class="activity-title">"TAMA O MALI? BAKIT?"</h2>
+        
+        <div class="content-area">
+            <div class="instruction-box">
+                <p><strong>📱 Panuto:</strong></p>
+                <p>Magpapakita ng pahayag ang guro at sasagutan ng mga mag-aaral ng <strong>TAMA</strong> o <strong>MALI</strong> gamit ang Mentimeter.</p>
+            </div>
+
+            <div class="qr-section">
+                <div class="qr-container">
+                    <img src="mentimeter_qr_code.png" alt="QR Code para sa Mentimeter" class="qr-code">
+                    <p class="scan-instruction">📲 I-scan ang QR Code</p>
+                    <p class="scan-details">Upang makapasok sa Mentimeter activity</p>
+                </div>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-button">← Bumalik sa Home</a>
+    </div>
+</body>
+</html>

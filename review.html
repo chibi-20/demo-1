@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review - Diskriminasyon</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .content-page {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            animation: slideIn 0.8s ease-out;
+        }
+        .page-title {
+            color: #667eea;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 15px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+        .subtitle {
+            color: #f093fb;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out;
+        }
+        .content-area {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            animation: scaleIn 1s ease-out;
+        }
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .data-table thead {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        .data-table th {
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .data-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .data-table tr:hover td {
+            background: linear-gradient(90deg, #fff 0%, #f8f5ff 100%);
+            transform: scale(1.02);
+        }
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+        .questions-section {
+            background: linear-gradient(135deg, #e0e7ff 0%, #fce7f3 100%);
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 40px;
+            animation: slideInUp 1.2s ease-out;
+        }
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .question {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            animation: fadeIn 1.5s ease-out backwards;
+        }
+        .question:nth-child(1) { animation-delay: 0.2s; }
+        .question:nth-child(2) { animation-delay: 0.4s; }
+        .question:nth-child(3) { animation-delay: 0.6s; }
+        .question:nth-child(4) { animation-delay: 0.8s; }
+        .question:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .back-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        .back-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="content-page">
+        <h1 class="page-title">📚 Balik-aral</h1>
+        <h2 class="subtitle">Taon ng Pagbibigay ng Karapatang Bumoto sa mga Kababaihan</h2>
+        
+        <div class="content-area">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Bansa</th>
+                        <th>Taon ng Pagbibigay ng Karapatang Bumoto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lebanon</td>
+                        <td>1952</td>
+                    </tr>
+                    <tr>
+                        <td>Tunisia</td>
+                        <td>1959</td>
+                    </tr>
+                    <tr>
+                        <td>Iraq</td>
+                        <td>1980</td>
+                    </tr>
+                    <tr>
+                        <td>Morocco</td>
+                        <td>1963</td>
+                    </tr>
+                    <tr>
+                        <td>Sudan</td>
+                        <td>1964</td>
+                    </tr>
+                    <tr>
+                        <td>Egypt</td>
+                        <td>1956</td>
+                    </tr>
+                    <tr>
+                        <td>Yemen</td>
+                        <td>1967</td>
+                    </tr>
+                    <tr>
+                        <td>Algeria</td>
+                        <td>1962</td>
+                    </tr>
+                    <tr>
+                        <td>Kuwait</td>
+                        <td>1985, 2005</td>
+                    </tr>
+                    <tr>
+                        <td>Saudi Arabia</td>
+                        <td>2015</td>
+                    </tr>
+                    <tr>
+                        <td>Syria</td>
+                        <td>1949, 1953</td>
+                    </tr>
+                    <tr>
+                        <td>Mauritania</td>
+                        <td>1961</td>
+                    </tr>
+                    <tr>
+                        <td>Oman</td>
+                        <td>1994</td>
+                    </tr>
+                    <tr>
+                        <td>Libya</td>
+                        <td>1964</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="questions-section">
+                <div class="question">
+                    <strong>1.</strong> Ilan sa kabuuan ang bansang nakalista na nagbigay ng karapatang bumoto sa kababaihan bago 1960?
+                </div>
+                <div class="question">
+                    <strong>2.</strong> Gaano karaming taon ang pagitan mula sa Syria (1953) hanggang sa Saudi Arabia (2015)?
+                </div>
+                <div class="question">
+                    <strong>3.</strong> I-arrange ang sumusunod na bansa ayon sa pinakamaaga hanggang pinakahuli sa pagbibigay ng karapatang bumoto: Morocco, Tunisia, Oman, Algeria.
+                </div>
+                <div class="question">
+                    <strong>4.</strong> Ano ang average (mean) year ng pagbibigay ng suffrage para sa mga bansang ito?
+                </div>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-button">← Bumalik sa Home</a>
+    </div>
+</body>
+</html>

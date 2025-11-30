@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Task - Diskriminasyon</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .content-page {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+            animation: slideIn 0.8s ease-out;
+        }
+        .page-title {
+            color: #fa709a;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 15px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .task-title {
+            color: #fee140;
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(250, 112, 154, 0.3);
+            animation: colorShift 3s ease-in-out infinite;
+        }
+        @keyframes colorShift {
+            0%, 100% {
+                color: #fa709a;
+            }
+            50% {
+                color: #fee140;
+            }
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .content-area {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .intro-box {
+            background: linear-gradient(135deg, #fff0f5 0%, #fff9e6 100%);
+            padding: 25px;
+            border-radius: 20px;
+            border-left: 5px solid #fa709a;
+            margin-bottom: 30px;
+            text-align: center;
+            animation: slideInLeft 1s ease-out;
+        }
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .intro-box p {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .option-card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            animation: scaleIn 1s ease-out backwards;
+            border-top: 5px solid;
+        }
+        .option-card:nth-child(1) { 
+            border-top-color: #fa709a;
+            animation-delay: 0.2s;
+        }
+        .option-card:nth-child(2) { 
+            border-top-color: #fee140;
+            animation-delay: 0.4s;
+        }
+        .option-card:nth-child(3) { 
+            border-top-color: #f093fb;
+            animation-delay: 0.6s;
+        }
+        .option-card:nth-child(4) { 
+            border-top-color: #ffd700;
+            animation-delay: 0.8s;
+        }
+        .option-card:nth-child(5) { 
+            border-top-color: #ff6b9d;
+            animation-delay: 1s;
+        }
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .option-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(250, 112, 154, 0.3);
+        }
+        .option-number {
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        .option-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #fa709a;
+            margin-bottom: 15px;
+        }
+        .option-content {
+            margin-bottom: 15px;
+        }
+        .option-content p {
+            margin-bottom: 10px;
+        }
+        .checklist {
+            list-style: none;
+            padding-left: 0;
+            margin: 15px 0;
+        }
+        .checklist li {
+            padding: 8px 0;
+            color: #555;
+        }
+        .checklist li:before {
+            content: "✔ ";
+            color: #fa709a;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        .rubric-section {
+            background: linear-gradient(135deg, #fff 0%, #ffe8f0 100%);
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            animation: slideInUp 1.4s ease-out;
+        }
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .rubric-section h3 {
+            color: #fa709a;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .rubric-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .rubric-table thead {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+        }
+        .rubric-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .rubric-table td {
+            padding: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .rubric-table tr:hover td {
+            background: linear-gradient(90deg, #fff 0%, #fff9e6 100%);
+        }
+        .rubric-table tr:last-child td {
+            border-bottom: none;
+        }
+        .points {
+            font-weight: bold;
+            color: #fa709a;
+            font-size: 18px;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        .back-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="content-page">
+        <h1 class="page-title">✏️ Performance Task</h1>
+        <h2 class="task-title">"ARTIVISM FOR EQUALITY"</h2>
+        <p class="subtitle">Gamitin ang Sining para Labanan ang Diskriminasyon sa Kasarian</p>
+        
+        <div class="content-area">
+            <div class="intro-box">
+                <p>🎨 Pumili ng isang sa mga sumusunod na Gawain:</p>
+            </div>
+
+            <div class="options-grid">
+                <div class="option-card">
+                    <div class="option-number">1</div>
+                    <div class="option-title">🎵 Song / Spoken Word Poetry</div>
+                    <div class="option-content">
+                        <p>Gumawa ng awit o spoken word piece (1–2 minutes).</p>
+                        <p><strong>Dapat maglaman ng:</strong></p>
+                        <ul class="checklist">
+                            <li>Isang uri ng diskriminasyon</li>
+                            <li>Epekto nito</li>
+                            <li>Panawagan o solusyon</li>
+                        </ul>
+                        <p>📹 I-record o i-perform nang live sa klase.</p>
+                    </div>
+                </div>
+
+                <div class="option-card">
+                    <div class="option-number">2</div>
+                    <div class="option-title">🎭 Mini Theater Skit</div>
+                    <div class="option-content">
+                        <p>Gumawa ng 5-minute skit na nagpapakita ng:</p>
+                        <ul class="checklist">
+                            <li>Sitwasyon ng diskriminasyon</li>
+                            <li>Damdamin at epekto sa biktima</li>
+                            <li>Tamang hakbang o solusyon</li>
+                            <li>Mensaheng pangkapantay-pantay</li>
+                        </ul>
+                        <p>🎪 Gumamit ng simpleng props at costumes.</p>
+                    </div>
+                </div>
+
+                <div class="option-card">
+                    <div class="option-number">3</div>
+                    <div class="option-title">🎨 Poster / Comics Strip / Digital Artwork</div>
+                    <div class="option-content">
+                        <p>Gumawa ng artwork tungkol sa gender discrimination.</p>
+                        <p><strong>Ipakita ang:</strong></p>
+                        <ul class="checklist">
+                            <li>Problema</li>
+                            <li>Epekto</li>
+                            <li>Solusyon</li>
+                        </ul>
+                        <p>✨ Original and creative. Maaari ring digital (Canva, ibisPaint, etc.)</p>
+                    </div>
+                </div>
+
+                <div class="option-card">
+                    <div class="option-number">4</div>
+                    <div class="option-title">🎬 Short Documentary / AVP (1–3 minutes)</div>
+                    <div class="option-content">
+                        <p>Gumawa ng maikling video gamit ang phone.</p>
+                        <p>Pwedeng may interviews, narration, text, o dramatization.</p>
+                        <p><strong>Dapat malinaw ang mensahe:</strong></p>
+                        <p>💫 <em>Pantay-Pantay ang Lahat ng Tao.</em></p>
+                    </div>
+                </div>
+
+                <div class="option-card">
+                    <div class="option-number">5</div>
+                    <div class="option-title">📝 Short Story / Editorial Writing</div>
+                    <div class="option-content">
+                        <p>Lumikha ng maikling kwento, sanaysay, o editorial tungkol sa diskriminasyon.</p>
+                        <p><strong>Minimum:</strong> 300 words</p>
+                        <p>Dapat may malinaw na aral o panawagan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rubric-section">
+                <h3>📊 Rubric / Pamantayan sa Pagmamarka</h3>
+                <table class="rubric-table">
+                    <thead>
+                        <tr>
+                            <th>Criteria</th>
+                            <th>Description</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Content / Accuracy</strong></td>
+                            <td>Malinaw at tama ang pag-unawa sa diskriminasyon</td>
+                            <td class="points">30 pts</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Creativity & Originality</strong></td>
+                            <td>Malikhain, masining, at unique ang gawa</td>
+                            <td class="points">20 pts</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Relevance of Message</strong></td>
+                            <td>Matibay at malinaw ang panawagan o solusyon</td>
+                            <td class="points">20 pts</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Execution / Technical Quality</strong></td>
+                            <td>Maayos, pulido, at magandang pagkakagawa</td>
+                            <td class="points">15 pts</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Presentation / Delivery</strong></td>
+                            <td>Kumpyansa, malinaw, at organisado ang pagpapaliwanag</td>
+                            <td class="points">15 pts</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-button">← Bumalik sa Home</a>
+    </div>
+</body>
+</html>
